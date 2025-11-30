@@ -1,9 +1,12 @@
 <svg width="315" height="121" viewBox="0 0 315 121" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Minimalist sync/padlock icon in orange-red -->
-  <circle cx="40" cy="55" r="18" fill="#FF6B35"/>
-  <path d="M32 55L40 47L48 55M40 47V63" stroke="#1c1e29" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  
-  <!-- SyncPad text - minimalist style -->
-  <text x="75" y="70" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="48" font-weight="600" fill="#ffffff" letter-spacing="-0.5">SyncPad</text>
-  <text x="75" y="95" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="13" font-weight="400" fill="#9ca3af" letter-spacing="0.5">Real-time collaboration</text>
+  <rect x="1.5" y="1.5" width="312" height="118" rx="18" fill="#2D2D2D" stroke="#404040" stroke-width="3"/>
+  <g transform="translate(24 18)">
+    <rect x="0" y="0" width="74" height="74" rx="18" fill="#3A3A3A" stroke="#404040" stroke-width="3" />
+    <circle cx="37" cy="37" r="20" fill="#CC785C" />
+    <path d="M26 42c0-7 5-12 11-12s11 5 11 12" stroke="#F4EFE6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M31 37h12" stroke="#2D2D2D" stroke-width="3" stroke-linecap="round" />
+    <path d="M33 45h8" stroke="#2D2D2D" stroke-width="3" stroke-linecap="round" />
+  </g>
+  <text x="120" y="68" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="48" font-weight="700" fill="#F4EFE6" letter-spacing="-0.5">SyncPad</text>
+  <text x="120" y="94" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="14" font-weight="500" fill="#A0A0A0" letter-spacing="0.6">Real-time collaboration</text>
 </svg>
