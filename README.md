@@ -15,12 +15,12 @@
 
 ## ✨ Features
 
-- 🚀 **Real-time Collaboration** - Multiple users edit code simultaneously with instant synchronization
-- 💬 **WebSocket Communication** - Bidirectional communication using Socket.IO for seamless updates
-- 🎨 **Professional Editor** - CodeMirror with syntax highlighting and dark theme
-- 👥 **User Presence** - See who's connected in real-time
-- 🔗 **Room-based Sessions** - Create or join rooms using unique Room IDs
-- 🎯 **Minimalist UI** - Clean, focused interface inspired by Claude's design
+- **Real-time Collaboration** - Multiple users edit code simultaneously with instant synchronization
+- **WebSocket Communication** - Bidirectional communication using Socket.IO for seamless updates
+- **Professional Editor** - CodeMirror with syntax highlighting and dark theme
+- **User Presence** - See who's connected in real-time
+- **Room-based Sessions** - Create or join rooms using unique Room IDs
+- **Minimalist UI** - Clean, focused interface inspired by Claude's design
 
 ---
 
@@ -45,7 +45,6 @@
 | **Frontend** | React, CodeMirror 5, React Router, react-hot-toast |
 | **Backend** | Node.js, Express |
 | **Real-time** | Socket.IO |
-| **Styling** | CSS with Claude-inspired design |
 
 ---
 
@@ -99,18 +98,6 @@ SyncPad deploys as a **single Node.js service** that serves:
 - The Express backend
 - The Socket.IO WebSocket server
 
-### Deploy to Render
-
-1. **Create a Web Service** on [Render](https://render.com)
-2. **Connect your GitHub repository**
-3. **Configure:**
-   - **Build Command**: `npm install && npm run build`
-   - **Start Command**: `npm start`
-   - **Environment**: Node
-4. **Deploy** - No environment variables needed!
-
-The app will be available at your Render service URL.
-
 ---
 
 ## 📁 Project Structure
@@ -126,16 +113,6 @@ SyncPad/
 ├── socketHandler.js # Socket.IO event handlers
 └── package.json
 ```
-
----
-
-## 🎨 Design Philosophy
-
-SyncPad features a minimalist, Claude-inspired design with:
-- **Dark theme** with carefully chosen color palette
-- **Orange-red accents** (`#FF6B35`) for interactive elements
-- **Clean typography** and spacing for optimal focus
-- **Responsive layout** that works on all screen sizes
 
 ---
 
