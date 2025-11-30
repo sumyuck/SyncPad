@@ -1,0 +1,278 @@
+.homePageWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    height: 100vh;
+}
+
+.formWrapper {
+    background: #282a36;
+    padding: 30px;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid #424242;
+}
+
+.mainLabel {
+    color: #e5e7eb;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+footer h4 {
+    color: #9ca3af;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+}
+
+footer a {
+    color: #FF6B35;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+footer a:hover {
+    color: #E55A2B;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainLabel {
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.homePageLogo {
+    height: 80px;
+    margin-bottom: 30px;
+}
+
+.inputBox {
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    margin-bottom: 14px;
+    background: #1c1e29;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #424242;
+}
+
+.inputBox:focus {
+    border-color: #FF6B35;
+    background: #2d2d2d;
+}
+
+.inputBox::placeholder {
+    color: #9ca3af;
+}
+
+.btn {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.joinBtn,
+.leaveBtn {
+    background: #FF6B35;
+    color: #fff;
+    width: 100px;
+    margin-left: auto;
+    font-weight: 600;
+}
+
+.joinBtn:hover,
+.leaveBtn:hover {
+    background: #E55A2B;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.createInfo {
+    margin: 0 auto;
+    margin-top: 20px;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.createNewBtn {
+    color: #FF6B35;
+    text-decoration: none;
+    border-bottom: 1px solid #FF6B35;
+    transition: all 0.3s ease-in-out;
+}
+
+.createNewBtn:hover,
+footer a:hover {
+    color: #E55A2B;
+    border-color: #E55A2B;
+}
+
+.mainWrap {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+}
+
+.aside {
+    background: #1c1e29;
+    padding: 16px;
+    color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+}
+
+.aside h3 {
+    color: #9ca3af;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.asideInner {
+    flex: 1;
+}
+
+.clientsList {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.client {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+.userName {
+    margin-top: 10px;
+    color: #e5e7eb;
+    font-size: 13px;
+}
+
+.logo {
+    border-bottom: 1px solid #424242;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.logoImage {
+    height: 60px;
+}
+
+.copyBtn {
+    background: #2d2d2d;
+    color: #e5e7eb;
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #424242;
+    font-weight: 500;
+}
+
+.copyBtn:hover {
+    background: #3d3d3d;
+    border-color: #FF6B35;
+    color: #fff;
+}
+
+.leaveBtn {
+    width: 100%;
+    margin-top: 20px;
+}
+.CodeMirror {
+    min-height: calc(100vh - 20px);
+    font-size: 16px;
+    line-height: 1.6;
+    padding-top: 20px;
+    background: #1c1e29 !important;
+    color: #e5e7eb !important;
+}
+
+/* Override CodeMirror dracula theme green colors with orange-red */
+.CodeMirror .cm-string,
+.CodeMirror .cm-string-2 {
+    color: #FF6B35 !important;
+}
+
+.CodeMirror .cm-keyword {
+    color: #FF6B35 !important;
+}
+
+.CodeMirror .cm-variable,
+.CodeMirror .cm-variable-2,
+.CodeMirror .cm-variable-3 {
+    color: #e5e7eb !important;
+}
+
+.CodeMirror .cm-number {
+    color: #FF6B35 !important;
+}
+
+.CodeMirror .cm-property {
+    color: #FF6B35 !important;
+}
+
+.CodeMirror .cm-attribute {
+    color: #FF6B35 !important;
+}
+
+.CodeMirror .cm-def {
+    color: #FF6B35 !important;
+}
+
+.CodeMirror .cm-builtin {
+    color: #FF6B35 !important;
+}
+
+.CodeMirror .cm-operator {
+    color: #e5e7eb !important;
+}
+
+.CodeMirror .cm-comment {
+    color: #9ca3af !important;
+}
+
+.CodeMirror .CodeMirror-linenumber {
+    color: #6b7280 !important;
+}
+
+.mainWrap {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    height: 100vh; 
+}
+
+.editorWrap {
+    height: 100%;
+    overflow: hidden; 
+}
+
+.editorWrap .cm-editor {
+    height: 100%;
+}

@@ -1,0 +1,52 @@
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import Home from './pages/Home';
+import EditorPage from './pages/EditorPage';
+
+function App() {
+    return (
+        <>
+            <div>
+                <Toaster
+                    position="top-right"
+                    toastOptions={{
+                        success: {
+                            iconTheme: {
+                                primary: '#FF6B35',
+                                secondary: '#fff',
+                            },
+                            style: {
+                                background: '#282a36',
+                                color: '#fff',
+                                border: '1px solid #FF6B35',
+                            },
+                        },
+                        error: {
+                            iconTheme: {
+                                primary: '#FF6B35',
+                                secondary: '#fff',
+                            },
+                            style: {
+                                background: '#282a36',
+                                color: '#fff',
+                                border: '1px solid #FF6B35',
+                            },
+                        },
+                    }}
+                ></Toaster>
+            </div>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />}></Route>
+                    <Route
+                        path="/editor/:roomId"
+                        element={<EditorPage />}
+                    ></Route>
+                </Routes>
+            </BrowserRouter>
+        </>
+    );
+}
+
+export default App;
