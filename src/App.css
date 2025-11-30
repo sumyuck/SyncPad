@@ -444,10 +444,13 @@
     background: var(--bg);
 }
 
-.CodeMirror-gutters {
-    background: var(--bg);
-    border-right: 1px solid var(--border);
-    color: #7d7d7d;
+.CodeMirror-gutters,
+.CodeMirror-gutter,
+.CodeMirror-linenumbers,
+.CodeMirror .CodeMirror-linenumber {
+    background: var(--bg) !important;
+    border-right: 1px solid var(--border) !important;
+    color: #7d7d7d !important;
 }
 
 .CodeMirror .cm-string,
