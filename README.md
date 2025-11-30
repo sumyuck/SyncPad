@@ -1,12 +1,12 @@
 # SyncPad
 
-A polished real-time code collaboration space with a premium, Claude-inspired UI. Create a room, invite a teammate, and pair program instantly with live code, cursor presence, and smooth interactions.
+Lightweight real-time code collaboration. Create a room, share the ID, and pair instantly with synced code, cursors, and a clean dark UI.
 
 ## Highlights
 - Live code sync powered by Socket.IO
 - CodeMirror editor with syntax highlighting and remote cursors
-- Room-based sessions with easy invite/copy actions
-- Responsive, modern layout and thoughtful micro-interactions
+- Room-based sessions with quick invite/copy actions
+- Responsive, minimal layout tuned for focus
 
 ## Stack
 - **Frontend:** React, CodeMirror 5, React Router, react-hot-toast
@@ -18,7 +18,7 @@ A polished real-time code collaboration space with a premium, Claude-inspired UI
 npm install
 npm run dev       # runs client and server together
 ```
-Navigate to `http://localhost:3000` and create or join a room. Share the room ID to collaborate.
+Open `http://localhost:3000`, create or join a room, and share the room ID to collaborate.
 
 ## Useful scripts
 - `npm run dev` – start both client and server
@@ -28,7 +28,7 @@ Navigate to `http://localhost:3000` and create or join a room. Share the room ID
 - `npm start` – serve the built app
 
 ## Deployment
-Build with `npm run build` and start with `npm start` on any Node-friendly host (Render, Fly.io, etc.). The backend serves the built React bundle and Socket.IO from the same origin.
+Build with `npm run build` and start with `npm start` on any Node-friendly host. The backend serves the built React bundle and Socket.IO from the same origin.
 
 ## License
 Private project – contact the author before reuse.

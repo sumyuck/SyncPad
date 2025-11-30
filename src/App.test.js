@@ -3,6 +3,6 @@ import App from './App';
 
 test('renders SyncPad landing headline', () => {
     render(<App />);
-    const heading = screen.getByText(/SyncPad Studio/i);
+    const heading = screen.getByText(/code together/i);
     expect(heading).toBeInTheDocument();
 });

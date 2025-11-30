@@ -16,9 +16,9 @@ export const initSocket = async () => {
     // In development, React runs on 3000, backend on 4000
     // In production, both are on same origin
     const isDevelopment = process.env.NODE_ENV === 'development';
-    const backendUrl = isDevelopment 
+    const backendUrl = isDevelopment
         ? 'http://localhost:4000'  // Development: connect to Express server
         : window.location.origin; // Production: same origin
-    
+
     return io(backendUrl, options);
 };

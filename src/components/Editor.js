@@ -6,7 +6,7 @@ import 'codemirror/addon/edit/closetag';
 import 'codemirror/addon/edit/closebrackets';
 import ACTIONS from '../Actions';
 
-const Editor = ({ socketRef, roomId, onCodeChange, username }) => {
+const Editor = ({ socketRef, roomId, onCodeChange, username, socketReady }) => {
     const editorRef = useRef(null);
     const cursorMarkersRef = useRef(new Map());
     const lastCursorRef = useRef('');
@@ -159,7 +159,7 @@ const Editor = ({ socketRef, roomId, onCodeChange, username }) => {
     }, [roomId, onCodeChange, socketRef]);
 
     useEffect(() => {
-        if (!socketRef.current) return undefined;
+        if (!socketReady || !socketRef.current) return undefined;
 
         const handleCodeChange = ({ code }) => {
             if (code !== null && code !== editorRef.current.getValue()) {
@@ -172,10 +172,10 @@ const Editor = ({ socketRef, roomId, onCodeChange, username }) => {
         return () => {
             socketRef.current?.off(ACTIONS.CODE_CHANGE, handleCodeChange);
         };
-    }, [socketRef]);
+    }, [socketReady, socketRef]);
 
     useEffect(() => {
-        if (!socketRef.current) return undefined;
+        if (!socketReady || !socketRef.current) return undefined;
 
         const handleCursorChange = (payload) => {
             if (payload?.socketId === socketRef.current.id) return;
@@ -193,7 +193,7 @@ const Editor = ({ socketRef, roomId, onCodeChange, username }) => {
             socketRef.current?.off(ACTIONS.CURSOR_CHANGE, handleCursorChange);
             socketRef.current?.off(ACTIONS.DISCONNECTED, handleDisconnect);
         };
-    }, [clearRemoteCursor, renderRemoteCursor, socketRef]);
+    }, [clearRemoteCursor, renderRemoteCursor, socketReady, socketRef]);
 
     return <textarea id="realtimeEditor" spellCheck="false"></textarea>;
 };

@@ -25,6 +25,7 @@ const EditorPage = () => {
     const reactNavigator = useNavigate();
     const [clients, setClients] = useState([]);
     const [connectionStatus, setConnectionStatus] = useState('connecting');
+    const [socketReady, setSocketReady] = useState(false);
 
     const username = location.state?.username;
 
@@ -36,6 +37,7 @@ const EditorPage = () => {
         const init = async () => {
             try {
                 socketRef.current = await initSocket();
+                setSocketReady(true);
             } catch (err) {
                 toast.error('Unable to start a live session.');
                 reactNavigator('/');
@@ -119,7 +121,7 @@ const EditorPage = () => {
     const copyRoomId = async () => {
         try {
             await navigator.clipboard.writeText(roomId);
-            toast.success('Room ID has been copied to your clipboard');
+            toast.success('Room ID copied.');
         } catch (err) {
             toast.error('Could not copy the Room ID');
             console.error(err);
@@ -136,28 +138,26 @@ const EditorPage = () => {
 
     return (
         <div className="workspace">
-            <div className="ambient ambient-one" />
-            <div className="ambient ambient-two" />
             <aside className="workspace__aside">
                 <div className="brand">
-                    <div className="brand__mark">SP</div>
+                    <div className="brand__mark">✺</div>
                     <div>
                         <p className="eyebrow">SyncPad</p>
-                        <strong>Premium collab</strong>
+                        <strong>Shared editor</strong>
                     </div>
                 </div>
 
                 <div className="room-card">
-                    <p className="eyebrow">Room</p>
+                    <p className="eyebrow">Room ID</p>
                     <h4 className="room-card__id">{roomId}</h4>
                     <p className="room-card__hint">
-                        Share this ID to invite others or copy it from the toolbar.
+                        Share this ID to invite others.
                     </p>
                 </div>
 
                 <div className="client-section">
                     <div className="client-section__header">
-                        <p className="eyebrow">Connected</p>
+                        <p className="eyebrow">Participants</p>
                         <span className="counter">{clients.length}</span>
                     </div>
                     <div className="clientsList">
@@ -184,7 +184,7 @@ const EditorPage = () => {
                     </div>
                     <div className="toolbar__actions">
                         <button className="ghost-btn" onClick={copyRoomId}>
-                            Copy invite
+                            Copy room ID
                         </button>
                         <button className="danger-btn" onClick={leaveRoom}>
                             Leave room
@@ -198,6 +198,7 @@ const EditorPage = () => {
                         roomId={roomId}
                         onCodeChange={handleCodeChange}
                         username={username}
+                        socketReady={socketReady}
                     />
                 </div>
             </section>

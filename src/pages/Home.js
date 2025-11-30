@@ -12,7 +12,7 @@ const Home = () => {
     const createNewRoom = () => {
         const id = uuidV4();
         setRoomId(id);
-        toast.success('A fresh room ID is ready to share.');
+        toast.success('New room ID generated.');
     };
 
     const joinRoom = () => {
@@ -36,32 +36,33 @@ const Home = () => {
 
     return (
         <div className="page page--home">
-            <div className="ambient ambient-one" />
-            <div className="ambient ambient-two" />
-            <div className="home-shell">
+            <div className="topbar">
+                <span className="brand-mark">
+                    <span className="brand-icon" aria-hidden>
+                        ✺
+                    </span>
+                    SyncPad
+                </span>
+                <span>Real-time code rooms</span>
+            </div>
+
+            <div className="home-grid">
                 <div className="home-copy">
-                    <p className="eyebrow">Collaborative coding, reimagined</p>
-                    <h1>
-                        SyncPad Studio
-                        <span className="accent-chip">Live</span>
-                    </h1>
-                    <p className="lede">
-                        Join or create a secure room and experience buttery-smooth
-                        real-time collaboration with your team.
+                    <span className="home-badge">Minimal, steady collaboration</span>
+                    <h1>Drop into a room and code together.</h1>
+                    <p>
+                        Create a room, share the ID, and collaborate in seconds. Smooth
+                        edits, synced cursors, and a focused workspace keep everyone in
+                        flow.
                     </p>
-                    <div className="pill-row">
-                        <span className="pill">No installs required</span>
-                        <span className="pill pill--accent">
-                            Orange-glow collaboration
-                        </span>
-                    </div>
+                    <p className="hint">No accounts. No fuss. Just real-time pairing.</p>
                 </div>
 
-                <div className="card form-card">
-                    <div className="card__header">
+                <div className="home-card">
+                    <div className="card-header">
                         <div>
-                            <p className="eyebrow">Jump into a session</p>
-                            <h3>Join a live room</h3>
+                            <p className="eyebrow">Start a session</p>
+                            <h3>Join or create</h3>
                         </div>
                         <button className="ghost-btn" onClick={createNewRoom}>
                             Generate ID
@@ -96,16 +97,13 @@ const Home = () => {
                     <button className="primary-btn" onClick={joinRoom}>
                         Enter workspace
                     </button>
-                    <p className="hint">
-                        Tip: share the room ID with a teammate to start co-editing
-                        instantly.
-                    </p>
+                    <p className="hint">Share the room ID with anyone to co-edit.</p>
                 </div>
             </div>
 
             <footer className="footer">
                 <p>
-                    Built with care by &nbsp;
+                    Built by &nbsp;
                     <a href="https://github.com/sumyuck" target="_blank" rel="noreferrer">
                         sumyuck
                     </a>
