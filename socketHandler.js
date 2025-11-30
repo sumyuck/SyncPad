@@ -31,6 +31,14 @@ function handleSocketEvents(io, socket) {
         socket.in(roomId).emit('code-change', { code });
     });
 
+    socket.on('cursor-change', ({ roomId, cursor }) => {
+        socket.in(roomId).emit('cursor-change', {
+            cursor,
+            socketId: socket.id,
+            username: userSocketMap[socket.id],
+        });
+    });
+
     socket.on('sync-code', ({ socketId, code }) => {
         io.to(socketId).emit('code-change', { code });
     });

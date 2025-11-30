@@ -8,78 +8,108 @@ const Home = () => {
 
     const [roomId, setRoomId] = useState('');
     const [username, setUsername] = useState('');
-    const createNewRoom = (e) => {
-        e.preventDefault();
+
+    const createNewRoom = () => {
         const id = uuidV4();
         setRoomId(id);
-        toast.success('Created a new room');
+        toast.success('A fresh room ID is ready to share.');
     };
 
     const joinRoom = () => {
-        if (!roomId || !username) {
-            toast.error('ROOM ID & username is required');
+        if (!roomId.trim() || !username.trim()) {
+            toast.error('Room ID and username are required.');
             return;
         }
 
-        // Redirect
         navigate(`/editor/${roomId}`, {
             state: {
-                username,
+                username: username.trim(),
             },
         });
     };
 
     const handleInputEnter = (e) => {
-        if (e.code === 'Enter') {
+        if (e.key === 'Enter') {
             joinRoom();
         }
     };
+
     return (
-        <div className="homePageWrapper">
-            <div className="formWrapper">
-                <img
-                    className="homePageLogo"
-                    src="/syncpad-logo.svg"
-                    alt="syncpad-logo"
-                />
-                <h4 className="mainLabel">Paste invitation ROOM ID</h4>
-                <div className="inputGroup">
-                    <input
-                        type="text"
-                        className="inputBox"
-                        placeholder="ROOM ID"
-                        onChange={(e) => setRoomId(e.target.value)}
-                        value={roomId}
-                        onKeyUp={handleInputEnter}
-                    />
-                    <input
-                        type="text"
-                        className="inputBox"
-                        placeholder="USERNAME"
-                        onChange={(e) => setUsername(e.target.value)}
-                        value={username}
-                        onKeyUp={handleInputEnter}
-                    />
-                    <button className="btn joinBtn" onClick={joinRoom}>
-                        Join
+        <div className="page page--home">
+            <div className="ambient ambient-one" />
+            <div className="ambient ambient-two" />
+            <div className="home-shell">
+                <div className="home-copy">
+                    <p className="eyebrow">Collaborative coding, reimagined</p>
+                    <h1>
+                        SyncPad Studio
+                        <span className="accent-chip">Live</span>
+                    </h1>
+                    <p className="lede">
+                        Join or create a secure room and experience buttery-smooth
+                        real-time collaboration with your team.
+                    </p>
+                    <div className="pill-row">
+                        <span className="pill">No installs required</span>
+                        <span className="pill pill--accent">
+                            Orange-glow collaboration
+                        </span>
+                    </div>
+                </div>
+
+                <div className="card form-card">
+                    <div className="card__header">
+                        <div>
+                            <p className="eyebrow">Jump into a session</p>
+                            <h3>Join a live room</h3>
+                        </div>
+                        <button className="ghost-btn" onClick={createNewRoom}>
+                            Generate ID
+                        </button>
+                    </div>
+
+                    <div className="input-grid">
+                        <label className="field">
+                            <span className="field__label">Room ID</span>
+                            <input
+                                type="text"
+                                className="input"
+                                placeholder="Paste an invite or generate a new one"
+                                onChange={(e) => setRoomId(e.target.value)}
+                                value={roomId}
+                                onKeyDown={handleInputEnter}
+                            />
+                        </label>
+                        <label className="field">
+                            <span className="field__label">Display name</span>
+                            <input
+                                type="text"
+                                className="input"
+                                placeholder="How should others see you?"
+                                onChange={(e) => setUsername(e.target.value)}
+                                value={username}
+                                onKeyDown={handleInputEnter}
+                            />
+                        </label>
+                    </div>
+
+                    <button className="primary-btn" onClick={joinRoom}>
+                        Enter workspace
                     </button>
-                    <span className="createInfo">
-                        If you don't have an invite then create &nbsp;
-                        <a
-                            onClick={createNewRoom}
-                            href=""
-                            className="createNewBtn"
-                        >
-                            new room
-                        </a>
-                    </span>
+                    <p className="hint">
+                        Tip: share the room ID with a teammate to start co-editing
+                        instantly.
+                    </p>
                 </div>
             </div>
-            <footer>
-                <h4>
-                    Built by &nbsp;
-                    <a href="https://github.com/sumyuck">sumyuck</a>
-                </h4>
+
+            <footer className="footer">
+                <p>
+                    Built with care by &nbsp;
+                    <a href="https://github.com/sumyuck" target="_blank" rel="noreferrer">
+                        sumyuck
+                    </a>
+                </p>
             </footer>
         </div>
     );
